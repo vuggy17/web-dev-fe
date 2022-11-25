@@ -1,0 +1,15 @@
+#for text
+<blockquote className={customBlockStyle.customBlockquote}>
+        <div className={customBlockStyle.customBlockquote__wrapper}>
+          <i className="bx bxs-quote-alt-left"></i>
+          <p>
+            Là thành phần trứ danh với khả năng chống oxy hóa vượt trội, vitamin
+            C với khả năng trung hòa tác động của gốc tự do, hỗ trợ tăng sinh
+            collagen & thúc đẩy quá trình hồi phục của da. Đặc biệt, sử dụng
+            vitamin C trong routine dưỡng da ban ngày sẽ giúp kem chống nắng
+            hoạt động hiệu quả hơn. Tuy nhiên, với đặc tính không ổn định và khó
+            bảo quản, vitamin C thường dễ bị đổi màu và phân hủy, vậy nên nàng
+            hãy bảo quản kỹ lưỡng trong quá trình sử dụng.{" "}
+          </p>
+        </div>
+      </blockquote>

@@ -1,0 +1,16 @@
+.customBlockquote {
+  padding: 30px 0px 30px 20px;
+  line-height: 35px;
+  &__wrapper {
+    display: flex;
+    font-style: italic;
+    justify-content: al;
+    text-align: justify;
+    i {
+      font-weight: lighter;
+      font-size: 30px;
+      color: var(--primary-color);
+      margin-right: 20px;
+    }
+  }
+}

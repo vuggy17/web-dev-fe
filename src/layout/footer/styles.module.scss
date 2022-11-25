@@ -1,0 +1,33 @@
+.footerMobile {
+  @media (min-width: 980px) {
+    display: none;
+  }
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba($color: #e7ebee, $alpha: 0.8);
+  .mainMenu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__navLink {
+      position: relative;
+      padding: 13px 10px 13px 10px;
+      //   padding-right: 20px;
+      .title {
+        font-family: Be Vietnam;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 2px;
+        color: var(--primary-text-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

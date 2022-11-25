@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react",
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@api/*": ["./src/app/api/*"],
+      "@utils/*": ["./src/app/utils/*"],
+      "@redux/*": ["./src/app/redux/*"],
+      "@public/*": ["./public/*"],
+      "@styles/*": ["./styles/*"],
+      "@definitions/*": ["./src/definitions/*"]
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@import "@styles/responsive.scss";
+
+.table {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0 -1px 24px 0;
+  text-align: left;
+  width: 100%;
+  border-collapse: separate;
+  border-radius: 5px;
+  font-size: 14px;
+
+  @include mobile-tablet {
+    tbody tr:first-child td:first-child {
+      border-top: 0;
+    }
+  }
+  th {
+    padding: 12px 9px;
+    @include mobile-tablet {
+      display: none;
+    }
+  }
+
+  td {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 9px 12px;
+    vertical-align: middle;
+    line-height: 1.5em;
+    text-align: left;
+  }
+
+  tr,
+  td {
+    @include mobile-tablet {
+      display: block;
+      text-align: right !important;
+
+      td::before {
+        content: attr(data-title) ": ";
+        float: left;
+        font-weight: 700;
+      }
+      .productRemove::before,
+      .actions::before {
+        display: none !important;
+      }
+      .actions,
+      .productRemove {
+        text-align: left !important;
+      }
+    }
+  }
+
+  .productThumbnail {
+    @include mobile-tablet {
+      display: none;
+    }
+  }
+
+  .productName {
+    @include mobile-tablet {
+    }
+  }
+}
+
+.paymentTable {
+  width: 50%;
+  margin-left: auto;
+  margin-right: 0;
+
+  @include mobile-tablet {
+    width: 100%;
+  }
+}

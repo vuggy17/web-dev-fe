@@ -1,0 +1,161 @@
+@import "/styles/responsive.scss";
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+
+  @include mobile-tablet {
+    &__left {
+      display: flex;
+    }
+    &__center {
+      display: none;
+    }
+    &__right {
+      display: none;
+    }
+    &__hamburger_menu {
+      display: flex;
+    }
+  }
+
+  @include desktop {
+    &__left {
+      display: flex;
+      flex: 2;
+    }
+    &__center {
+      display: flex;
+      flex: 5;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      ul {
+        display: flex;
+        height: 100%;
+        li {
+          .nav_link {
+            padding: 0 5px;
+          }
+          display: flex;
+          align-items: center;
+          position: relative;
+          height: 100%;
+          cursor: pointer;
+          padding-right: 45px;
+          &:hover {
+            color: var(--secondary-text-color);
+          }
+          font-family: "Be Vietnam";
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          letter-spacing: 2px;
+          color: var(--primary-text-color);
+          &:hover {
+            .dropdownMenu {
+              opacity: 1;
+              transform: translateY(0px);
+            }
+          }
+          .dropdownMenu {
+            background-color: var(--secondary-color);
+            top: 100%;
+            position: absolute;
+            transition: 0.2s ease-in-out;
+            transform: translateY(10px);
+            opacity: 0;
+            left: 0px;
+            min-width: 180px;
+            width: max-content;
+            box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.05),
+              0 6px 20px 0 rgba(0, 0, 0, 0.05);
+            ul {
+              display: flex;
+              flex-direction: column;
+              li {
+                border-top: 1px solid #e2e2e2;
+                padding: 15px 5px 15px 10px;
+                position: relative;
+                // text-transform: uppercase;
+                .subMenuVer1 {
+                  position: absolute;
+                  left: calc(100% + 5px);
+
+                  min-width: 160px;
+                  width: max-content;
+                  padding-top: 10px;
+                  ul {
+                    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.05),
+                      0 6px 20px 0 rgba(0, 0, 0, 0.05);
+                    background-color: var(--secondary-color);
+                    display: flex;
+                    flex-direction: column;
+                    li {
+                      color: var(--secondary-text-color);
+                      border-top: 1px solid #e2e2e2;
+                      padding: 12px 10px;
+                    }
+                  }
+                }
+
+                &:hover {
+                  .subMenuVer2 {
+                    opacity: 1;
+                    transform: translateX(0);
+                  }
+                }
+
+                .subMenuVer2 {
+                  opacity: 0;
+                  transform: translateX(10px);
+                  display: block;
+                  position: absolute;
+                  transition: 0.2s ease-in-out;
+
+                  left: calc(100% + 10px);
+                  top: 0px;
+                  min-width: 180px;
+                  width: max-content;
+                  padding-top: 5px;
+                  &__arrow {
+                    position: absolute;
+                    width: 11px;
+                    height: 11px;
+                    top: 25px;
+                    left: -5px;
+                    background-color: var(--secondary-color);
+                    transform: rotate(45deg);
+                    cursor: pointer;
+                    transition: 0.3s;
+                    z-index: 1;
+                  }
+                  ul {
+                    box-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.05),
+                      0 6px 20px 0 rgba(0, 0, 0, 0.05);
+                    background-color: var(--secondary-color);
+                    display: flex;
+                    flex-direction: column;
+                    li {
+                      color: var(--secondary-text-color);
+                      border-top: 1px solid #e2e2e2;
+                      padding: 12px 10px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &__right {
+      flex: 2;
+      display: flex;
+    }
+    &__hamburger_menu {
+      display: none;
+    }
+  }
+}

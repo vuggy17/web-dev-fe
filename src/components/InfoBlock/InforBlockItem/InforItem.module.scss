@@ -1,0 +1,101 @@
+$textBackground: #f7f2ee;
+// $newTextBackground: rgba(255, 252, 249, 0.836);
+// $newTextBackground: rgba(255, 252, 249, 0.836);
+$transitionTime: 500ms;
+
+$mobile-width: 480px;
+$tablet-width: 768px;
+$sm-desktop-width: 1000px;
+$desktop-width: 1024px;
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+// @mixin sm-tablet { @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
+//   @content;
+//  }
+// }
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  cursor: pointer;
+  font-size: 0.82rem;
+
+  .textCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--secondary-color);
+    --tw-bg-opacity: 0.5;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    width: 40%;
+    opacity: 0.8;
+    text-transform: uppercase;
+    span {
+      opacity: 1;
+    }
+  }
+
+  .blur {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0);
+    transition: $transitionTime;
+  }
+
+  &:hover .blur {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: $transitionTime;
+  }
+}
+@include tablet {
+  .container {
+    font-size: 0.82em;
+
+    & > .textCenter {
+      width: 70%;
+      padding-top: 6%;
+      padding-bottom: 6%;
+    }
+  }
+}
+
+@include desktop {
+  .container {
+    height: 186px;
+
+    & > .textCenter {
+      width: 50%;
+      padding-top: 4%;
+      padding-bottom: 4%;
+    }
+  }
+}

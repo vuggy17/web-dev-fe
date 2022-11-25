@@ -1,0 +1,51 @@
+import React from "react";
+import { resolveImageURL } from "src/app/services";
+import AuthorTag from "../Reusable/AuthorTags";
+import InformationCard from "../Reusable/InformationCard";
+import PostImage from "../Reusable/PostImage";
+
+const postObject = {
+  id: 1,
+  title: "Travel beyond the odinary",
+  category: ["Inspiration", "Lifestyle"],
+  date: "",
+  image: "",
+  tags: ["", ""],
+  content:
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam, fugit.",
+  likes: 100,
+  views: 100,
+};
+
+const tags = [
+  {
+    id: 1,
+    content: "motivation",
+  },
+  {
+    id: 2,
+    content: "deptrai",
+  },
+  {
+    id: 3,
+    content: "Vui ve",
+  },
+];
+
+function Thumbnail({ postInfo }) {
+  const { feature_image } = postInfo || {};
+  
+  return (
+    <div className="w-full">
+      {/* Image here */}
+      <PostImage media={{ url: feature_image, alt: "" }} />
+      {/* Information card here and author*/}
+      <div className="py-8 w-full text-gray-600">
+        <InformationCard postInfo={postInfo} />
+      </div>
+      {/**End infor here */}
+    </div>
+  );
+}
+
+export default Thumbnail;

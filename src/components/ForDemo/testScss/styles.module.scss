@@ -1,0 +1,34 @@
+.A {
+  color: #ff0000;
+  &:hover ~ .C {
+    color: white;
+  }
+}
+.B {
+  color: blue;
+  &:hover ~ .C {
+    color: white;
+  }
+}
+.C {
+  color: pink;
+  &__C0 {
+    padding-left: 10px;
+    color: orange;
+    &__C00 {
+      color: rosybrown;
+      // padding-left: 10px;
+      // &:hover ~ .C__C1 {
+      //   color: white !important;
+      // }
+    }
+  }
+  &__C1 {
+    padding-left: 10px;
+    color: hotpink;
+    &__C11 {
+      padding-left: 20px;
+      color: green;
+    }
+  }
+}

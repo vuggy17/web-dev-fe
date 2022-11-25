@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+:root {
+  /* --primary-color: #ceac92;
+  --secondary-color: #f7f2ee;
+  --primary-text-color: #232323;
+  --secondary-text-color: #636363; */
+  --primary-color: #fbb44d;
+--secondary-color: #e7ebee;
+--primary-text-color: #232323;
+--secondary-text-color: #636363;
+
+  --breakpoint-table: 768px;
+  --breakpoint-mobile: 375px;
+  --toastify-color-success: #ceac92 !important;
+  --alert-success: #8fae1b;
+  --alert-error: #b81c23;
+  --alert-info: #1e85be;
+}
+/* 
+@font-face {
+  font-family: Be Vietnam;
+  src: url("/fonts/Be Vietnam/Be VietnamF-Regular.ttf");
+}
+@font-face {
+  font-family: Be Vietnam;
+  src: url("/fonts/Be Vietnam/Be VietnamF-Italic.ttf");
+  font-style: italic;
+}
+@font-face {
+  font-family: Be Vietnam;
+  src: url("/fonts/Be Vietnam/Be VietnamF-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: Be Vietnam;
+  src: url("/fonts/Be Vietnam/Be VietnamF-BoldItalic.ttf");
+  font-style: italic;
+  font-weight: bold;
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* blockquote {
+    @apply leading-10 bg-f7f7f7 p-8 italic ring-1 ring-gray-200;
+  } */
+}
+
+html,
+body {
+  font-display: swap;
+  padding: 0;
+  margin: 0;
+  font-family: "Be Vietnam", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* xóa cái shadow trên safari của combobox
+*/
+/* select {
+  -webkit-appearance: none;
+} */
+
+/* xoa cai arrow cua input type number dung cho product details page*/
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/*arrow input end here*/

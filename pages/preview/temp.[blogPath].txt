@@ -1,0 +1,27 @@
+import { fetchingPageData } from "@app/api/fetchingPageData";
+import { NextPage } from "next";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+import BlogDetailContainer from "@containers/BlogDetail";
+
+const PreviewBlogPage: NextPage = () => {
+  const router = useRouter();
+  const [postInfo, setPostInfo] = useState(null);
+  useEffect(() => {
+    const { blogPath } = router.query;
+    if (blogPath) {
+      (async () => {
+        const res: any = await fetchingPageData.getPreviewPost(blogPath);
+        setPostInfo(res);
+      })();
+    }
+  }, [router]);
+  if (!postInfo) return <div></div>;
+  return (
+    <div>
+      <BlogDetailContainer blogDetailPageData={postInfo} />
+    </div>
+  );
+};
+
+export default PreviewBlogPage;

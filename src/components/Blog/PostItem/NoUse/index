@@ -1,0 +1,37 @@
+import React from "react";
+import ListUI from "../ListUI/ListUI";
+import Thumbnail from "./Thumbnail/Thumbnail";
+
+function PostItem(props) {
+  const postItems = [
+    {
+      id: 0,
+    },
+    {
+      id: 1,
+    },
+    {
+      id: 2,
+    },
+    {
+      id: 3,
+    },
+  ];
+
+  return (
+    <div className="">
+      <div className="mb-4">
+        <Thumbnail />
+      </div>
+      <div className="md:grid grid-cols-2 gap-10">
+        {postItems.map((post) => (
+          <div key={post.id} id={post.id} className="mb-4 md:mb-0">
+            <ListUI />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default PostItem;

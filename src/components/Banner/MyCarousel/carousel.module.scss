@@ -1,0 +1,58 @@
+$desktop: 1280;
+$tablet: 1024px;
+$subtablet: 980px;
+$mobile: 375px;
+
+.prevWrapper {
+  @media (max-width: $subtablet) {
+    display: none;
+  }
+  position: absolute;
+  left: 0;
+  z-index: 1000;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .btnPrev {
+    width: 30px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s;
+    &:hover {
+      background: rgba(0, 0, 0, 0.8);
+      transition: all 0.6s;
+    }
+  }
+}
+.nextWrapper {
+  @media (max-width: $subtablet) {
+    display: none;
+  }
+  position: absolute;
+  right: 0;
+  z-index: 1000;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .btnNext {
+    width: 30px;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    transition: all 0.6s;
+    &:hover {
+      background: rgba(0, 0, 0, 0.8);
+      transition: all 0.6s;
+    }
+  }
+}

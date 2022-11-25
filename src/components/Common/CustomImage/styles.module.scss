@@ -1,0 +1,11 @@
+.container > div {
+  position: unset !important;
+}
+
+.image {
+  object-fit: contain !important;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+  max-height: 100% !important;
+}
