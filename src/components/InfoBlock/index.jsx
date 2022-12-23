@@ -7,21 +7,21 @@ import imageTest from "@public/images/template/post/post1-1024x653.jpg";
 const itemCate = [
   {
     id: 0,
-    title: "Bài viết",
-    image: "/images/official/navigate/9.jpg",
-    url: "./blogs",
-  },
-  {
-    id: 1,
     title: "Sản phẩm",
-    image: "/images/official/navigate/7.webp",
+    image: "/images/official/others/san_pham.jpeg",
     url: "./shop",
   },
   {
-    id: 2,
-    title: "Về tôi",
-    image: "/images/official/navigate/8.jpg",
+    id: 1,
+    title: "Dịch vụ",
+    image: "/images/official/others/tu_van.jpeg",
     url: "./about-me",
+  },
+  {
+    id: 2,
+    title: "Tin tức",
+    image: "/images/official/others/tin_tuc.jpeg ",
+    url: "./blogs",
   },
 ];
 // const alt = "about";

@@ -5,7 +5,7 @@ $mobile: 375px;
 $navbar-height: 55px;
 
 .wrapper {
-  background-color: var(--secondary-color);
+  background-color: var(--next-bg-color);
   position: relative;
   &__hamburgerBar {
     height: 100%;
@@ -30,7 +30,7 @@ $navbar-height: 55px;
         font-size: 20px;
         font-weight: 400;
         &:hover {
-          color: var(--primary-color);
+          color: var(--primary-next-color);
         }
       }
     }
@@ -50,12 +50,14 @@ $navbar-height: 55px;
     justify-content: right;
     overflow: hidden;
     .searchBar {
+      cursor: pointer;
+      width: 200px;
       display: flex;
       align-items: center;
       height: 100%;
       margin-right: 15px;
       &:hover {
-        color: var(--primary-color);
+        color: var(--next-secondary-color);
       }
       &__title {
         font-family: Be Vietnam;
@@ -110,7 +112,7 @@ $navbar-height: 55px;
       .mainMenu {
         position: relative;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         height: 100%;
         background-color: inherit;
         &__menuItem {
@@ -121,6 +123,8 @@ $navbar-height: 55px;
           font-style: normal;
           font-weight: 300;
           letter-spacing: 1px;
+          padding-left: 10px;
+          padding-right: 10px;
           color: var(--primary-text-color);
           // padding-right: 45px;
           &__navLink {

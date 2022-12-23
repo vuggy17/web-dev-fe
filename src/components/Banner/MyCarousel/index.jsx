@@ -1,6 +1,7 @@
 import { useEmblaCarousel } from "embla-carousel/react";
 import React, { useCallback } from "react";
 import BannerItem from "../BannerItem";
+import { BANNER_DATA } from "../fakeData";
 import styles from "./carousel.module.scss";
 const settings = { skipSnaps: false, loop: true };
 export default function MyCarousel({ listBanners }) {
@@ -41,7 +42,7 @@ export default function MyCarousel({ listBanners }) {
           {listBanners.map((banner, index) => {
             return (
               <div
-                key={index}
+                key={banner.id}
                 className="embla__slide"
                 style={{
                   position: "relative",

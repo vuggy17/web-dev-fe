@@ -11,7 +11,10 @@ import HoTroKhachHang from "./HoTroKhachHang";
 function FooterInformation() {
   const blogCategories = useSelector((state) => state.common.blogCategories);
   return (
-    <div className="w-full text-gray-600 flex flex-col justify-around items-center md:grid md:grid-cols-3 md:items-start md:gap-7">
+    <div
+      className="w-full flex flex-col justify-around items-center md:grid md:grid-cols-3 md:items-start md:gap-7"
+      style={{ color: "#4e3618" }}
+    >
       <div className="text-center flex flex-col items-center mb-10 md:text-left md:items-start">
         {/* <div className="mb-4">
           <h3 className={style.header}>CÔNG TY TNHH MỘT MÌNH TAO</h3>

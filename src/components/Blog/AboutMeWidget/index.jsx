@@ -5,7 +5,8 @@ import { useSelector } from "react-redux";
 
 function AboutMeWidget() {
   const aboutAuthor = useSelector((state) => state.common.aboutAuthor);
-  if (!aboutAuthor || (aboutAuthor || []).length === 0) return <div></div>;
+  // if (!aboutAuthor || (aboutAuthor || []).length === 0) return <div></div>;
+  if (aboutAuthor.length === 0) return <div></div>;
   return (
     //Sua width thanh full khi ghep lai!
     //Tham khao ae cai tracking wide the co on ko
@@ -17,7 +18,7 @@ function AboutMeWidget() {
         <div className="w-32 h-32 rounded-full overflow-hidden mb-1">
           <Image
             loader={imageLoader}
-            src={aboutAuthor?.avatar}
+            src={aboutAuthor?.avatar || "./images/official/logo/logo.png.png"}
             width={764}
             height={764}
             objectFit="cover"

@@ -23,6 +23,11 @@ module.exports = {
     },
     extend: {
       colors: {
+        "next-primary": "var(--next-primary-color)",
+        "next-secondary": "var(--next-secondary-color)",
+        "next-bg": "var(--next-bg-color)",
+        "next-btn": "var(--next-btn-color)",
+
         primary: "var(--primary-color)",
         secondary: "var(--secondary-color)",
         textPrimary: "var(--primary-text-color)",

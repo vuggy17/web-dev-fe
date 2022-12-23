@@ -51,8 +51,8 @@ function CommentForm({ blogId, handleNewComment }) {
             className="w-full outline-none px-2 py-2 h-32 bg-gray-50"
           ></textarea>
         </div>
-        <div className="lg:flex lg:justify-center lg:mb-4 ">
-          <div className="w-full ring-1 ring-gray-300 mb-4 lg:mr-20">
+        <div className="lg:flex lg:justify-center lg:mb-4 lg:gap-10 ">
+          <div className="w-full ring-1 ring-gray-300 mb-4">
             <input
               type="text"
               {...register("name")}
@@ -60,7 +60,7 @@ function CommentForm({ blogId, handleNewComment }) {
               className="w-full h-11 px-2 outline-none bg-gray-50"
             />
           </div>
-          <div className="w-full ring-1 ring-gray-300 mb-4 lg:mr-20">
+          <div className="w-full ring-1 ring-gray-300 mb-4">
             <input
               type="email"
               {...register("email")}
@@ -81,7 +81,7 @@ function CommentForm({ blogId, handleNewComment }) {
           <input
             type="submit"
             value="Bình luận"
-            className="px-2 w-2/5 sm:w-1/5 h-11 outline-none bg-primary text-gray-50 uppercase hover:bg-gray-800 transition duration-500 cursor-pointer"
+            className="px-2 w-2/5 sm:w-1/5 h-11 outline-none bg-next-btn text-gray-50 uppercase hover:bg-gray-800 transition duration-500 cursor-pointer"
           />
         </div>
       </form>

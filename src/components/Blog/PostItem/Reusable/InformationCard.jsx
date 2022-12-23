@@ -33,7 +33,7 @@ function InformationCard({ postInfo }) {
           onClick={() => {
             router.push(`/blogs/${path}`);
           }}
-          className="cursor-pointer bg-primary inline-block text-sm py-2 px-4 text-gray-50 uppercase hover:bg-gray-800 transition duration-500 ease-linear"
+          className="cursor-pointer bg-next-btn inline-block text-sm py-2 px-4 text-gray-50 uppercase hover:bg-gray-800 transition duration-500 ease-linear"
         >
           ĐỌC NGAY
         </div>

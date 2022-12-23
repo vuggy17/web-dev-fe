@@ -4,16 +4,17 @@ import BrandImage from "@public/images/official/logo/DR DONG PHUONG - LOGO - FIN
 
 export default function Brand() {
   return (
-    <div style={{ padding: "35px 0px 40px 0px" }}>
-      <div
-        style={{
-          maxWidth: "200px",
-          textAlign: "center",
-          margin: "auto",
-        }}
-      >
-        <Image src={BrandImage} alt="Logo Brand" />
-      </div>
-    </div>
+    // <div style={{ padding: "35px 0px 40px 0px" }}>
+    //   <div
+    //     style={{
+    //       maxWidth: "200px",
+    //       textAlign: "center",
+    //       margin: "auto",
+    //     }}
+    //   >
+    //     <Image src={BrandImage} alt="Logo Brand" />
+    //   </div>
+    // </div>
+    <></>
   );
 }

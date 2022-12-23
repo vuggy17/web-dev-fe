@@ -132,7 +132,7 @@ export default function Footer({ setIsOpenSearch }) {
           </li>
         </ul>
       </div>
-      <div style={{ textAlign: "center" }} className="bg-secondary p-10">
+      <div style={{ textAlign: "center" }} className="bg-next-primary p-10">
         <FooterInformation />
       </div>
     </>

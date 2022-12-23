@@ -13,21 +13,6 @@ export default function BannerItem({ bannerInfo }) {
     <div className={styles.bannerItemContainer}>
       <div className={styles.bannerImageWrapper}>
         <div className={styles.bannerImage}>
-          {/* <Image
-            src={bannerInfo?.media.url || ""}
-            alt={bannerInfo?.media.alt}
-            width={1440}
-            height={500}
-            layout="responsive"
-            loader={imageLoader}
-          /> */}
-          {/* <CustomImage
-            src={bannerInfo?.media.url}
-            alt={bannerInfo?.media.alt}
-            // layout="responsive"
-            objectFit="cover"
-            loader={imageLoader}
-          /> */}
           <Image
             src={bannerInfo?.media.url}
             layout="fill"

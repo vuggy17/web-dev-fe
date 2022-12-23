@@ -48,6 +48,11 @@ export const fetchingPageData = {
       .catch((error) => {
         return [];
       });
+
+    const getProduct = axios.get(baseURL + "/landing/product").then(res => res.data).catch(err => {
+      console.err('[NETWORK ERR]: Landing page error')
+      return []
+    })
     const response = await axios
       .all([
         getTags,
@@ -56,6 +61,7 @@ export const fetchingPageData = {
         getLatestBlogs,
         getDealOfWeek,
         getTestimonials,
+        getProduct,
       ])
       .then((...response) => {
         const tags = response[0][0];
@@ -64,7 +70,7 @@ export const fetchingPageData = {
         const latestBlogs = response[0][3];
         const productsDealOfWeek = response[0][4];
         const testimonials = response[0][5];
-        // return response;
+        const products = response[0][6]
         return {
           tags,
           mainSlide,
@@ -72,6 +78,7 @@ export const fetchingPageData = {
           latestBlogs,
           productsDealOfWeek,
           testimonials,
+          products
         };
       })
       .catch((error) => {

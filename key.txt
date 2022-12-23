@@ -1,0 +1,10 @@
+http://localhost:8080/?pgsql=containers-us-west-168.railway.app%3A6932&username=postgres
+
+
+production env
+
+NEXT_PUBLIC_BASE_URL_IMAGE ="https://web-dev-be-production.up.railway.app"
+NEXT_PUBLIC_BASE_URL_FE ="http://localhost:3000"
+NEXT_PUBLIC_BASE_URL_BE ="https://web-dev-be-production.up.railway.app"
+NEXT_PUBLIC_BASE_URL_API ="https://web-dev-be-production.up.railway.app/api"
+NEXT_PUBLIC_DOMAIN = "localhost"

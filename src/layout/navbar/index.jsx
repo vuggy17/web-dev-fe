@@ -42,9 +42,11 @@ export default function Navbar({ appRoute, onOpenSearch }) {
             {/* <a href="https://twitter.com" target="_blank" rel="noreferrer">
               <i className="bx bxl-twitter"></i>
             </a>
+                  
             <a href="https://www.pinterest.com" target="_blank" rel="noreferrer">
               <i className="bx bxl-pinterest"></i>
-            </a> */}
+            </a> 
+            */}
             <a
               href="https://www.instagram.com/drdongphuong/"
               target="_blank"
@@ -52,6 +54,7 @@ export default function Navbar({ appRoute, onOpenSearch }) {
             >
               <i className="bx bxl-instagram"></i>
             </a>
+
             <Link passHref href="/search">
               <div className={styles.searchBtn} target="_blank">
                 <i className="bx bx-search"></i>
@@ -61,9 +64,8 @@ export default function Navbar({ appRoute, onOpenSearch }) {
         </div>
         <div className={`${styles.wrapper__headerCenter}`}>
           <ul
-            className={`${styles.mainMenu} ${
-              expandNavbar ? styles.mainMenuExpand : styles.mainMenuCollapse
-            }`}
+            className={`${styles.mainMenu} ${expandNavbar ? styles.mainMenuExpand : styles.mainMenuCollapse
+              }`}
           >
             <li className={styles.mainMenu__menuItem}>
               <Link href="/" scroll passHref>
@@ -71,89 +73,6 @@ export default function Navbar({ appRoute, onOpenSearch }) {
                   TRANG CHỦ
                 </div>
               </Link>
-            </li>
-
-            <li className={styles.mainMenu__menuItem}>
-              <div className={styles.mainMenu__menuItem__navLink}>
-                <Link href="/blogs" passHref scroll>
-                  <span
-                    onClick={() => {
-                      router.push("/blogs");
-                    }}
-                    className={styles.mainMenu__menuItem__navLink__title}
-                    style={{ marginRight: "8px" }}
-                  >
-                    BÀI VIẾT
-                  </span>
-                </Link>
-                <div
-                  className={styles.mainMenu__menuItem__navLink__iconWrapper}
-                >
-                  {/* <div className="styles.mainMenu__menuItem__navLink__icon"> */}
-                  <i
-                    style={{ fontSize: "13px" }}
-                    className={`bx bx-chevron-down `}
-                  ></i>
-                  {/* </div> */}
-                </div>
-              </div>
-              <div className={`${styles.dropdownMenuContainer}`}>
-                <ul className={styles.dropdownMenu}>
-                  {blog_categories
-                    ? blog_categories.map((cate) => {
-                        const { id, name, path, children } = cate;
-                        return (
-                          <li key={id} className={styles.dropdownMenu__item}>
-                            <div className={styles.dropdownMenu__item__title}>
-                              <Link href={`/category/${path}`} passHref scroll>
-                                <span className="cursor-pointer">{name}</span>
-                              </Link>
-                              {(children || []).length > 0 ? (
-                                <i
-                                  style={{ fontSize: "13px" }}
-                                  className="bx bx-chevron-right"
-                                ></i>
-                              ) : (
-                                ""
-                              )}
-                            </div>
-                            {children || [].length > 0 ? (
-                              <div className={styles.subMenuDropdownContainer}>
-                                <ul className={styles.subMenuDropdown}>
-                                  {children.map((child) => {
-                                    const { id, name, path } = child;
-                                    return (
-                                      <li
-                                        key={id}
-                                        className={styles.subMenuDropdown__item}
-                                      >
-                                        <Link
-                                          href={`/category/${path}`}
-                                          passHref
-                                          scroll
-                                        >
-                                          <div
-                                            className={
-                                              styles.subMenuDropdown__item__title
-                                            }
-                                          >
-                                            <span>{name}</span>
-                                          </div>
-                                        </Link>
-                                      </li>
-                                    );
-                                  })}
-                                </ul>
-                              </div>
-                            ) : (
-                              ""
-                            )}
-                          </li>
-                        );
-                      })
-                    : []}
-                </ul>
-              </div>
             </li>
 
             <li className={styles.mainMenu__menuItem}>
@@ -184,56 +103,139 @@ export default function Navbar({ appRoute, onOpenSearch }) {
                 <ul className={styles.dropdownMenu}>
                   {shop_categories
                     ? shop_categories.map((cate) => {
-                        const { id, name, path, children } = cate;
-                        return (
-                          <li key={id} className={styles.dropdownMenu__item}>
-                            <div className={styles.dropdownMenu__item__title}>
-                              <Link href={`/shop/${path}`} passHref scroll>
-                                <span className="cursor-pointer">{name}</span>
-                              </Link>
-                              {(children || []).length > 0 ? (
-                                <i
-                                  style={{ fontSize: "13px" }}
-                                  className="bx bx-chevron-right"
-                                ></i>
-                              ) : (
-                                ""
-                              )}
-                            </div>
-                            {children || [].length > 0 ? (
-                              <div className={styles.subMenuDropdownContainer}>
-                                <ul className={styles.subMenuDropdown}>
-                                  {children.map((child) => {
-                                    const { id, name, path } = child;
-                                    return (
-                                      <li
-                                        key={id}
-                                        className={styles.subMenuDropdown__item}
-                                      >
-                                        <Link
-                                          href={`/shop/${path}`}
-                                          passHref
-                                          scroll
-                                        >
-                                          <div
-                                            className={
-                                              styles.subMenuDropdown__item__title
-                                            }
-                                          >
-                                            <span>{name}</span>
-                                          </div>
-                                        </Link>
-                                      </li>
-                                    );
-                                  })}
-                                </ul>
-                              </div>
+                      const { id, name, path, children } = cate;
+                      return (
+                        <li key={id} className={styles.dropdownMenu__item}>
+                          <div className={styles.dropdownMenu__item__title}>
+                            <Link href={`/shop/${path}`} passHref scroll>
+                              <span className="cursor-pointer">{name}</span>
+                            </Link>
+                            {(children || []).length > 0 ? (
+                              <i
+                                style={{ fontSize: "13px" }}
+                                className="bx bx-chevron-right"
+                              ></i>
                             ) : (
                               ""
                             )}
-                          </li>
-                        );
-                      })
+                          </div>
+                          {children || [].length > 0 ? (
+                            <div className={styles.subMenuDropdownContainer}>
+                              <ul className={styles.subMenuDropdown}>
+                                {children.map((child) => {
+                                  const { id, name, path } = child;
+                                  return (
+                                    <li
+                                      key={id}
+                                      className={styles.subMenuDropdown__item}
+                                    >
+                                      <Link
+                                        href={`/shop/${path}`}
+                                        passHref
+                                        scroll
+                                      >
+                                        <div
+                                          className={
+                                            styles.subMenuDropdown__item__title
+                                          }
+                                        >
+                                          <span>{name}</span>
+                                        </div>
+                                      </Link>
+                                    </li>
+                                  );
+                                })}
+                              </ul>
+                            </div>
+                          ) : (
+                            ""
+                          )}
+                        </li>
+                      );
+                    })
+                    : []}
+                </ul>
+              </div>
+            </li>
+
+            <li className={styles.mainMenu__menuItem}>
+              <div className={styles.mainMenu__menuItem__navLink}>
+                <Link href="/blogs" passHref scroll>
+                  <span
+                    onClick={() => {
+                      router.push("/blogs");
+                    }}
+                    className={styles.mainMenu__menuItem__navLink__title}
+                    style={{ marginRight: "8px" }}
+                  >
+                    BÀI VIẾT
+                  </span>
+                </Link>
+                <div
+                  className={styles.mainMenu__menuItem__navLink__iconWrapper}
+                >
+                  {/* <div className="styles.mainMenu__menuItem__navLink__icon"> */}
+                  <i
+                    style={{ fontSize: "13px" }}
+                    className={`bx bx-chevron-down `}
+                  ></i>
+                  {/* </div> */}
+                </div>
+              </div>
+              <div className={`${styles.dropdownMenuContainer}`}>
+                <ul className={styles.dropdownMenu}>
+                  {blog_categories
+                    ? blog_categories.map((cate) => {
+                      const { id, name, path, children } = cate;
+                      return (
+                        <li key={id} className={styles.dropdownMenu__item}>
+                          <div className={styles.dropdownMenu__item__title}>
+                            <Link href={`/category/${path}`} passHref scroll>
+                              <span className="cursor-pointer">{name}</span>
+                            </Link>
+                            {(children || []).length > 0 ? (
+                              <i
+                                style={{ fontSize: "13px" }}
+                                className="bx bx-chevron-right"
+                              ></i>
+                            ) : (
+                              ""
+                            )}
+                          </div>
+                          {children || [].length > 0 ? (
+                            <div className={styles.subMenuDropdownContainer}>
+                              <ul className={styles.subMenuDropdown}>
+                                {children.map((child) => {
+                                  const { id, name, path } = child;
+                                  return (
+                                    <li
+                                      key={id}
+                                      className={styles.subMenuDropdown__item}
+                                    >
+                                      <Link
+                                        href={`/category/${path}`}
+                                        passHref
+                                        scroll
+                                      >
+                                        <div
+                                          className={
+                                            styles.subMenuDropdown__item__title
+                                          }
+                                        >
+                                          <span>{name}</span>
+                                        </div>
+                                      </Link>
+                                    </li>
+                                  );
+                                })}
+                              </ul>
+                            </div>
+                          ) : (
+                            ""
+                          )}
+                        </li>
+                      );
+                    })
                     : []}
                 </ul>
               </div>
@@ -275,11 +277,13 @@ export default function Navbar({ appRoute, onOpenSearch }) {
         <div className={styles.wrapper__headerRight}>
           <Link passHref href="/search">
             <div className={styles.searchBar}>
-              <span className={styles.searchBar__title}>Tìm kiếm ...</span>
-              <i
-                style={{ fontSize: "20px", fontWeight: "bolder" }}
-                className="bx bx-search"
-              ></i>
+              <div className="bg-white py-1 px-2 flex-1 flex justify-between border border-transparent transform transition duration-150 hover:border-next-primary">
+                <span className={styles.searchBar__title}>Tìm kiếm ...</span>
+                <i
+                  style={{ fontSize: "20px", fontWeight: "bolder" }}
+                  className="bx bx-search"
+                ></i>
+              </div>
             </div>
           </Link>
           <Link passHref href="/cart">

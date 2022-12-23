@@ -27,7 +27,12 @@ function Item({ postInfo, index }) {
                 alt={alt}
               />
             </div>
-            <div className="absolute rounded-full bg-primary text-gray-50 text-center align-middle w-6 h-6 ring-1 xl:w-7 xl:h-7 xl:border-2 xl:border-white ring-white">
+            <div
+              className="absolute flex items-center justify-center rounded-full bg-next-primary text-next-btn text-gray-50 text-center align-middle w-6 h-6  xl:w-7 xl:h-7  "
+              style={{
+                fontSize: "0.8rem",
+              }}
+            >
               {index}
             </div>
           </div>

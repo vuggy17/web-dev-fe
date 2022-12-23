@@ -31,9 +31,9 @@ function AboutmeBlock() {
         <div className="text-center break-words w-10/12 lg:w-full mb-6">
           <p>{aboutAuthor?.description}</p>
         </div>
-        <div className="cursor-pointer bg-primary max-w-md px-6 py-1 hover:bg-gray-800 transition duration-500">
+        <div className="cursor-pointer bg-next-btn max-w-md px-6 py-1 hover:bg-gray-800 transition duration-500">
           <Link href="/about-me" passHref>
-            <div className="text-gray-100 text-center text-lg">Về tôi</div>
+            <div className="text-gray-100 text-center px-2 py-1">Về tôi</div>
           </Link>
         </div>
       </div>

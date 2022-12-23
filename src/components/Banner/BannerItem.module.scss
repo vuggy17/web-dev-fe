@@ -25,7 +25,7 @@ $mobile: 375px;
     .bannerImage {
       width: 100%;
       min-width: 1152px;
-      min-height: 500px;
+      min-height: 720px;
       @media (max-width: $mobile) {
         min-height: 400px;
       }
@@ -55,6 +55,7 @@ $mobile: 375px;
           line-height: 30px !important;
         }
         .btn {
+          // background-color: var(--next-btn-color);
           // display: none;
         }
       }
@@ -121,7 +122,7 @@ $mobile: 375px;
           .callToAction {
             padding-top: 20px;
             .btn {
-              background-color: var(--primary-color);
+              background-color: var(--next-btn-color);
               color: white;
               padding: 10px 20px;
               outline: none;

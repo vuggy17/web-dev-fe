@@ -6,6 +6,8 @@ $navbar-height: 55px;
   grid-template-rows: max-content 1fr max-content;
   grid-template-columns: 100%;
   width: 100%;
+  background-color: var(--next-bg-color);
+
   // overflow: hidden;
 }
 .navbar {
@@ -14,7 +16,8 @@ $navbar-height: 55px;
   z-index: 1000;
   height: max-content;
   min-height: $navbar-height;
-  background-color: var(--secondary-color);
+  // background-color: transparent;
+  background-color: var(--primary-bg-color);
 }
 
 .main {

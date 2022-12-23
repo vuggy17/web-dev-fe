@@ -8,6 +8,7 @@ import Brand from "@components/Brand";
 import InforBlock from "@components/InfoBlock";
 import TestimonialSlide from "@components/TestimonialSlide";
 import React from "react";
+import Products from "../Shop/Products";
 import BlogArea from "./BlogsArea";
 import DealOfTheWeek from "./DealOfTheWeek";
 
@@ -19,7 +20,9 @@ export default function HomepageContainer({ homepageData }) {
     latestBlogs,
     productsDealOfWeek,
     testimonials,
+    products
   } = homepageData || {};
+  console.log('home page', homepageData)
   return (
     <div>
       <div>
@@ -42,7 +45,9 @@ export default function HomepageContainer({ homepageData }) {
           </div>
           <div className="lg:grid lg:grid-cols-12">
             <div className="mb-10 lg:col-span-9 lg:pr-10">
-              <BlogArea listBlogs={allBlogs || []} />
+              {/* // TODO: fix this */}
+              {products? <Products productData={products} />: null}
+            {/* <BlogArea listBlogs={allBlogs || []} /> */}
             </div>
             <div className="lg:col-span-3">
               <div className="mb-16">

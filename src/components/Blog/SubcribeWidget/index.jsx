@@ -71,7 +71,7 @@ function SubWidget() {
               type="submit"
               name="submit-email"
               value="Đăng ký"
-              className="w-full h-11 bg-primary text-white hover:bg-gray-800 transform ease-linear duration-300"
+              className="w-full h-11 bg-next-btn text-white cursor-pointer hover:bg-gray-800 transform ease-linear duration-300"
             />
           </div>
         </div>
