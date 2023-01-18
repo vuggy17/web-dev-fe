@@ -11,7 +11,7 @@ export default function SearchPage() {
         openGraph={{
           type: "website",
           url: `${BASE_URL_FE}/search`,
-          title: "DR ĐÔNG PHƯƠNG",
+          title: "LUNI STORIES",
           description: "Tìm kiếm",
           images: [
             {

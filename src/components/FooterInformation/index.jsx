@@ -27,13 +27,13 @@ function FooterInformation() {
           <h3 className={style.header}>THÔNG TIN LIÊN HỆ</h3>
           <ContactElement
             Icon={PhoneIcon}
-            contactInfor="Điện thoại: 0943.993.665"
+            contactInfor="Điện thoại: 0869.256.174"
           />
           <ContactElement
             Icon={MailIcon}
-            contactInfor="Email: drdphuong@gmail.com"
+            contactInfor="Email: lunistories@gmail.com"
           />
-          <ContactElement Icon={AtSymbolIcon} contactInfor="drdongphuong.com" />
+          <ContactElement Icon={AtSymbolIcon} contactInfor="lunistories.com" />
         </div>
 
         <div className="flex">
@@ -64,7 +64,7 @@ function FooterInformation() {
       </div>
 
       <div className="text-center flex flex-col items-center mb-10 md:text-left md:items-start mx-auto">
-        <h3 className={style.header}>DR ĐÔNG PHƯƠNG</h3>
+        <h3 className={style.header}>LUNI STORIES</h3>
         <div className="capitalize">
           <LinkElement title="Bài viết" link="/blogs" />
           <LinkElement title="Sản phẩm" link="/shop" />

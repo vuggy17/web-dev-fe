@@ -15,7 +15,7 @@ export default function CheckoutSuccess() {
         openGraph={{
           type: "website",
           url: `${BASE_URL_FE}/checkout/success`,
-          title: "DR ĐÔNG PHƯƠNG | Đặt hàng thành công",
+          title: "LUNI STORIES| Đặt hàng thành công",
           description: "Đặt hàng thành công",
           images: [
             {

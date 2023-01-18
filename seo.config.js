@@ -4,7 +4,7 @@ export const SEO = {
     type: "website",
     locale: "vi_VN",
     url: BASE_URL_FE,
-    site_name: "DR ĐÔNG PHƯƠNG",
+    site_name: "LUNI STORIES",
   },
   // titleTemplate: "Blog thẩm mỹ | %s",
 };

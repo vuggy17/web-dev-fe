@@ -12,7 +12,7 @@ export default function Cart() {
         openGraph={{
           type: "website",
           url: `${BASE_URL_FE}/chinh-sach-doi-tra`,
-          title: "DR ĐÔNG PHƯƠNG | Giỏ Hàng",
+          title: "LUNI STORIES| Giỏ Hàng",
           description: "Giỏ Hàng",
           images: [
             {

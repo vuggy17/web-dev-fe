@@ -17,7 +17,7 @@ export default function DieuKhoanDichVu({
         openGraph={{
           type: "website",
           url: `${BASE_URL_FE}/dieu-khoan-dich-vu`,
-          title: "DR ĐÔNG PHƯƠNG | Điều khoản dịch vụ",
+          title: "LUNI STORIES| Điều khoản dịch vụ",
           description: "Điều khoản dịch vụ",
           images: [
             {

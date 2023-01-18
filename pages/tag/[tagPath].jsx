@@ -12,7 +12,7 @@ export default function FilterByTagsPage() {
         openGraph={{
           type: "website",
           url: `${BASE_URL_FE}/tag`,
-          title: "DR ĐÔNG PHƯƠNG",
+          title: "LUNI STORIES",
           description: "TAG",
           images: [
             {

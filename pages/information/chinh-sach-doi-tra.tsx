@@ -17,7 +17,7 @@ export default function ChinhSachDoiTra({
         openGraph={{
           type: "website",
           url: `${BASE_URL_FE}/chinh-sach-doi-tra`,
-          title: "DR ĐÔNG PHƯƠNG | Chính sách đổi trả",
+          title: "LUNI STORIES| Chính sách đổi trả",
           description: "Chính sách đổi trả",
           images: [
             {

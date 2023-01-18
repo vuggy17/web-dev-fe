@@ -27,6 +27,9 @@ export default function BlogDetailContainer({ blogDetailPageData }) {
         <div className="px-6 item mx-0 lg:px-20 w-full xl:px-0">
           <div className="lg:grid lg:grid-cols-12">
             <div className="mb-0 md:col-span-9">
+              <div className="w-full my-10">
+                <AboutMeWidget />
+              </div>
               <div className="w-full">
                 <PostContent
                   postInfo={post ? post : { content: "<div>no content </div>" }}
@@ -34,9 +37,6 @@ export default function BlogDetailContainer({ blogDetailPageData }) {
                 <div className="mt-10">
                   <PostTagsAndShare tags={post?.tag || []} />
                 </div>
-              </div>
-              <div className="w-full my-10">
-                <AboutMeWidget />
               </div>
               <div className="w-full my-10">
                 <RelatedProduct products={blogProducts || []} />
