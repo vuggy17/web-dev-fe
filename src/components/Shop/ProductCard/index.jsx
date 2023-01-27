@@ -50,7 +50,7 @@ function ProductCard({ product }) {
     <Link passHref href={`/product/${path}`}>
       <div className="flex flex-col items-center cursor-pointer mb-4 md:mb-2">
         <div className="relative w-full mb-3 overflow-hidden">
-          <div className="transition duration-500 ease-in transform hover:scale-105 object-cover">
+          <div className="transition duration-500 ease-in transform hover:scale-105 object-cover min-h-[263px]">
             <CustomImage
               alt="testing"
               loader={imageLoader}

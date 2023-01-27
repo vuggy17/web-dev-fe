@@ -1067,20 +1067,10 @@ camelcase-css@^2.0.1:
   resolved "https://registry.yarnpkg.com/camelcase-css/-/camelcase-css-2.0.1.tgz#ee978f6947914cc30c6b44741b6ed1df7f043fd5"
   integrity sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==
 
-caniuse-lite@^1.0.30001202, caniuse-lite@^1.0.30001219, caniuse-lite@^1.0.30001228:
-  version "1.0.30001247"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001247.tgz#105be7a8fb30cdd303275e769a9dfb87d4b3577a"
-  integrity sha512-4rS7co+7+AoOSPRPOPUt5/GdaqZc0EsUpWk66ofE3HJTAajUK2Ss2VwoNzVN69ghg8lYYlh0an0Iy4LIHHo9UQ==
-
-caniuse-lite@^1.0.30001243:
-  version "1.0.30001248"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001248.tgz#26ab45e340f155ea5da2920dadb76a533cb8ebce"
-  integrity sha512-NwlQbJkxUFJ8nMErnGtT0QTM2TJ33xgz4KXJSMIrjXIbDVdaYueGyjOrLKRtJC+rTiWfi6j5cnZN1NBiSBJGNw==
-
-caniuse-lite@^1.0.30001271:
-  version "1.0.30001274"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001274.tgz#26ca36204d15b17601ba6fc35dbdad950a647cc7"
-  integrity sha512-+Nkvv0fHyhISkiMIjnyjmf5YJcQ1IQHZN6U9TLUMroWR38FNwpsC51Gb68yueafX1V6ifOisInSgP9WJFS13ew==
+caniuse-lite@^1.0.30001202, caniuse-lite@^1.0.30001219, caniuse-lite@^1.0.30001228, caniuse-lite@^1.0.30001243, caniuse-lite@^1.0.30001271:
+  version "1.0.30001448"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001448.tgz"
+  integrity sha512-tq2YI+MJnooG96XpbTRYkBxLxklZPOdLmNIOdIhvf7SNJan6u5vCKum8iT7ZfCt70m1GPkuC7P3TtX6UuhupuA==
 
 chalk@2.4.2, chalk@^2.0.0:
   version "2.4.2"
@@ -1554,22 +1544,22 @@ elliptic@^6.5.3:
     minimalistic-assert "^1.0.1"
     minimalistic-crypto-utils "^1.0.1"
 
-embla-carousel-react@^7.0.5:
-  version "7.0.5"
-  resolved "https://registry.yarnpkg.com/embla-carousel-react/-/embla-carousel-react-7.0.5.tgz#c6a079e382432335e34adb16bb11558df047760c"
-  integrity sha512-qhw980gKj7G+O5d3WSwj0TyhcbpGP3DqJPiAatt1t3wEEcZqn7csaIfLh4e1N/0kna9sZfZZRzz+//NSrUodSg==
+embla-carousel-autoplay@^7.0.9:
+  version "7.0.9"
+  resolved "https://registry.yarnpkg.com/embla-carousel-autoplay/-/embla-carousel-autoplay-7.0.9.tgz#340e0dc6145fdd6a4bf7ce372dd1e0c7f14ec42b"
+  integrity sha512-I8LhZ5iAyu8L3qoYgOgjnpHK5mv6c1w5a7IcT6Et24BqGf8D+yFWfI28ctz9YvrqH1QbyUezy5LfuaeGaqfclw==
+
+embla-carousel-react@^7.0.9:
+  version "7.0.9"
+  resolved "https://registry.yarnpkg.com/embla-carousel-react/-/embla-carousel-react-7.0.9.tgz#7ba5664eefcf435c385ceeccbd7c722654fa5e09"
+  integrity sha512-KGnnZWukN+N2H6VjQf6C9mWmInqtCIiInhkGsJ9ckxri3m3Ks6wRDz+RRlV1kcuPHtRoxyFuBBGNwftWqMO9Pw==
   dependencies:
-    embla-carousel "7.0.5"
+    embla-carousel "7.0.9"
 
-embla-carousel@7.0.5:
-  version "7.0.5"
-  resolved "https://registry.yarnpkg.com/embla-carousel/-/embla-carousel-7.0.5.tgz#b43e590c072d06a5b11d4ce19d024f5f07a62862"
-  integrity sha512-loRcu0La0F7bhEMwbvgpi14iaaIEdwacH1xoplnaYfwN4KMgECkiuLgu4lx+v6MYd6lSpg/bw7ZxEuLUwYjavg==
-
-embla-carousel@^4.5.3:
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/embla-carousel/-/embla-carousel-4.5.3.tgz#3e1b471fd9765b910c5dd9acddf129b07626782d"
-  integrity sha512-S7fPpoV9AsPRII8ytsDQavW4JbU3xWBAO+i158eVahVZYVb04vC+913QfO3FGzsVK/4sb58NJ42LBDh143+YhA==
+embla-carousel@7.0.9:
+  version "7.0.9"
+  resolved "https://registry.yarnpkg.com/embla-carousel/-/embla-carousel-7.0.9.tgz#51dc885e62b7208c8fa9ea9c470d5ae20012c39f"
+  integrity sha512-g8pGPd1BxexiZgw8F1aNM1KL3x3eEcz6TGTz20AuqCCynASBV7/h1+aS2rySDc/hHkXqbU8dk7TDhW71LCqVkQ==
 
 emoji-regex@^8.0.0:
   version "8.0.0"

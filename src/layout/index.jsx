@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import Footer from "./footer";
 import styles from "./layout.module.scss";
 import Navbar from "./navbar";
+import Notification from "./notification";
 
 export default function Layout({ appRoute, ...props }) {
   const dispatch = useDispatch();
@@ -35,13 +36,16 @@ export default function Layout({ appRoute, ...props }) {
           setIsOpenSearch(false);
         }}
       />
-      <div className={styles.navbar}>
-        <Navbar
-          onOpenSearch={() => {
-            setIsOpenSearch(true);
-          }}
-          appRoute={appRoute}
-        />
+      <div className={styles.header} >
+        <Notification />
+        <div className={styles.navbar}>
+          <Navbar
+            onOpenSearch={() => {
+              setIsOpenSearch(true);
+            }}
+            appRoute={appRoute}
+          />
+        </div>
       </div>
       <div className={styles.main}>{props.children}</div>
       <div className={styles.footer}>

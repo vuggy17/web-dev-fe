@@ -17,6 +17,9 @@ export default function Navbar({ appRoute, onOpenSearch }) {
   const { cartItemsQuantity } = useSelector((state) => state.cart);
   return (
     <>
+      <div className={styles.responsiveLogo}>
+        <img src="./images/official/logo/logo-white.png" />
+      </div>
       <div className={styles.wrapper}>
         <div
           onClick={() => {
@@ -31,36 +34,7 @@ export default function Navbar({ appRoute, onOpenSearch }) {
           <i className="bx bx-menu"></i>
         </div>
         <div className={styles.wrapper__headerLeft}>
-          <div className={styles.headerSocial}>
-            <a
-              href="https://www.facebook.com/profile.php?id=100009362074337"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="bx bxl-facebook"></i>
-            </a>
-            {/* <a href="https://twitter.com" target="_blank" rel="noreferrer">
-              <i className="bx bxl-twitter"></i>
-            </a>
-                  
-            <a href="https://www.pinterest.com" target="_blank" rel="noreferrer">
-              <i className="bx bxl-pinterest"></i>
-            </a> 
-            */}
-            <a
-              href="https://www.instagram.com/drdongphuong/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="bx bxl-instagram"></i>
-            </a>
-
-            <Link passHref href="/search">
-              <div className={styles.searchBtn} target="_blank">
-                <i className="bx bx-search"></i>
-              </div>
-            </Link>
-          </div>
+          <img src="./images/official/logo/logo-white.png" />
         </div>
         <div className={`${styles.wrapper__headerCenter}`}>
           <ul
@@ -276,22 +250,33 @@ export default function Navbar({ appRoute, onOpenSearch }) {
         </div>
         <div className={styles.wrapper__headerRight}>
           <Link passHref href="/search">
-            <div className={styles.searchBar}>
+            {/* <i
+              style={{ fontSize: "20px", fontWeight: "bolder" }}
+              className="bx bx-search"
+            ></i> */}
+            <svg xmlns="http://www.w3.org/2000/svg" color="#121212" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+
+            {/* <div className={styles.searchBar}>
               <div className="bg-white py-1 px-2 flex-1 flex justify-between border border-transparent transform transition duration-150 hover:border-next-primary">
                 <span className={styles.searchBar__title}>Tìm kiếm ...</span>
-                <i
-                  style={{ fontSize: "20px", fontWeight: "bolder" }}
-                  className="bx bx-search"
-                ></i>
+              
               </div>
-            </div>
+            </div> */}
           </Link>
           <Link passHref href="/cart">
             <div className={styles.cart}>
-              <i
+              {/* <i
                 style={{ fontSize: "20px", fontWeight: "bolder" }}
                 className="bx bxs-cart-alt"
-              ></i>
+              ></i> */
+              }
+              <svg xmlns="http://www.w3.org/2000/svg" color="#121212" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+              </svg>
+
+
               <div className={styles.cart__amount}>{cartItemsQuantity}</div>
             </div>
           </Link>

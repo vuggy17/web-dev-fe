@@ -1,6 +1,7 @@
 module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
+  mode: "jit",
   theme: {
     screens: {
       xxs: "300px",
@@ -11,6 +12,7 @@ module.exports = {
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
+      "3xl": "1440px",
     },
     borderWidth: {
       DEFAULT: "1px",
@@ -41,6 +43,30 @@ module.exports = {
       },
       transitionProperty: {
         height: "height",
+      },
+      fontFamily: {
+        handwriting: ['"Dancing Script"', "cursive"],
+      },
+      animation: {
+        marquee: "marquee 10s linear infinite",
+        marquee2: "marquee2 10s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        marquee2: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
+      },
+      lineHeight: {
+        64: "4rem",
+      },
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        "5col-280": "repeat(5, minmax(120px, 280px))",
       },
     },
   },

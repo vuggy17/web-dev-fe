@@ -18,7 +18,7 @@ function AboutMeWidget() {
         <div className="w-32 h-32 rounded-full overflow-hidden mb-1">
           <Image
             loader={imageLoader}
-            src={aboutAuthor?.avatar || "./images/official/logo/logo.png.png"}
+            src={aboutAuthor?.avatar || "./images/official/logo/logo-white.png"}
             width={764}
             height={764}
             objectFit="cover"
