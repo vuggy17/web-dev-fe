@@ -6,18 +6,16 @@ function ListUI({ postInfo }) {
   const { media, last_publish, path } = postInfo || {};
 
   return (
-    <div className="w-full ">
+    <div className="w-full flex flex-col">
       {/* Image here */}
       <div>
         <PostImage time={last_publish} path={path} media={media} />
       </div>
 
       {/* Information card here and author*/}
-      <div className="py-8 w-full md:flex text-gray-700">
+      <div className="pt-8 pb-4 w-full h-full text-gray-700 md:flex md:flex-1">
         {/**information card */}
-        <div>
-          <InformationCard postInfo={postInfo} />
-        </div>
+        <InformationCard postInfo={postInfo} />
       </div>
       {/**End infor here */}
     </div>

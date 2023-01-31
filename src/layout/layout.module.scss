@@ -1,30 +1,35 @@
 $navbar-height: 55px;
 
+// $large-desktop: 1440px;
+
 .container {
   min-height: 100vh;
-  display: grid;
-  grid-template-rows: max-content 1fr max-content;
-  grid-template-columns: 100%;
   width: 100%;
   background-color: var(--next-bg-color);
-
-  // overflow: hidden;
+  // padding-left: 16px;
+  // padding-right: 16px;
 }
+
 .navbar {
-  grid-row-start: 1;
   width: 100%;
-  z-index: 1000;
-  height: max-content;
   min-height: $navbar-height;
-  // background-color: transparent;
   background-color: var(--primary-bg-color);
 }
 
 .main {
-  grid-row-start: 2;
   width: 100%;
+  margin-top: 1rem;
 }
 .footer {
-  grid-row-start: 3;
   min-height: 55px;
+  background-image: url("https://cdn.shopify.com/s/files/1/0608/3054/8189/files/obh-f.png?v=1649987021");
+  background-color: #f8f0e9;
+  padding-top: 48px;
 }
+
+// @media (min-width: $large-desktop) {
+//   .container{
+//    padding-left: 64px;
+//    padding-right: 64px;
+//   }
+//  }

@@ -4,9 +4,30 @@ $subtablet: 980px;
 $mobile: 375px;
 $navbar-height: 55px;
 
+.search {
+  font-size: 20px;
+  color: #121212;
+}
+.responsiveLogo {
+  display: none;
+}
+
+@media (max-width: $subtablet) {
+  .responsiveLogo {
+    display: block;
+    img {
+      height: 5rem;
+      width: auto;
+      margin: 0 auto;
+      object-fit: cover;
+    }
+  }
+}
+
 .wrapper {
   background-color: var(--next-bg-color);
   position: relative;
+
   &__hamburgerBar {
     height: 100%;
     background-color: inherit;
@@ -14,25 +35,13 @@ $navbar-height: 55px;
   &__headerLeft {
     height: 100%;
     background-color: inherit;
-    .headerSocial {
-      padding-left: 25px;
-      padding-right: 25px;
-      display: flex;
-      overflow: hidden;
-      word-wrap: break-word;
-
-      a,
-      .searchBtn {
-        line-height: $navbar-height;
-        float: left;
-        width: 25px;
-        margin-right: 10px;
-        font-size: 20px;
-        font-weight: 400;
-        &:hover {
-          color: var(--primary-next-color);
-        }
-      }
+    :hover{
+      cursor: pointer;
+    }
+    img {
+      width: auto !important;
+      height: $navbar-height !important;
+      object-fit: cover;
     }
   }
   &__headerCenter {
@@ -75,6 +84,7 @@ $navbar-height: 55px;
       position: relative;
       display: flex;
       align-items: center;
+      margin-left: 22px;
       &__amount {
         background-color: var(--primary-color);
         font-size: 9px;
@@ -92,11 +102,9 @@ $navbar-height: 55px;
   }
 
   @media (min-width: $subtablet) {
-    position: fixed;
-    height: $navbar-height;
     width: 100%;
     display: flex;
-    // grid-template-columns: repeat(12, 1fr);
+    align-items: center;
     &__headerLeft {
       width: max-content;
       .headerSocial {
@@ -119,12 +127,10 @@ $navbar-height: 55px;
           background-color: inherit;
           cursor: pointer;
           font-family: Be Vietnam;
-          font-size: 13px;
-          font-style: normal;
-          font-weight: 300;
-          letter-spacing: 1px;
-          padding-left: 10px;
-          padding-right: 10px;
+          font-size: 14px;
+          font-weight: 400;
+          letter-spacing: 0.5px;
+          padding: 30px 20px;
           color: var(--primary-text-color);
           // padding-right: 45px;
           &__navLink {
@@ -226,22 +232,21 @@ $navbar-height: 55px;
     height: max-content;
     display: grid;
     grid-template-columns: 60px 1fr;
-    grid-template-rows: $navbar-height 1fr;
+    grid-template-rows: auto 1fr;
+    row-gap: 4px;
+
     &__headerLeft {
-      .headerSocial {
-        position: absolute;
-        right: 0;
-        overflow: hidden;
-        text-align: right;
-        word-wrap: break-word;
+      img {
+        display: none;
       }
     }
+
     &__hamburgerBar {
       background-color: inherit;
       font-size: 20px;
       display: flex;
       align-items: center;
-      padding-left: 30px;
+      padding-left: 16px;
       cursor: pointer;
     }
     &__headerCenter {
@@ -360,7 +365,5 @@ $navbar-height: 55px;
     }
 
     //----
-  }
-  @media (max-width: $tablet) {
   }
 }

@@ -1,5 +1,5 @@
-import ProductCard from "@components/Shop/ProductCard";
-import React, { useEffect } from "react";
+import HPProductCard from '../../../components/Shop/HomePageProductCard'
+import React from "react";
 
 export default function ProductsArea({ products }) {
   if (products.length === 0) return null;
@@ -9,7 +9,7 @@ export default function ProductsArea({ products }) {
         {products.map((item) =>
           item.is_publish ? (
             <li key={item.id}>
-              <ProductCard product={item} />
+              <HPProductCard product={item} />
             </li>
           ) : (
             ""

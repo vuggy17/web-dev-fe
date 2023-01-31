@@ -10,16 +10,18 @@ function InformationCard({ postInfo }) {
   const { title, path, description, category } = postInfo || {};
   const router = useRouter();
   return (
-    <div className="w-full">
-      {/**Categories */}
-      <div className="text-primary mb-6 lg:text-sm xl:text-md">
-        <Categories categoryInfo={category || []} />
-      </div>
+    <div className="flex flex-col px-2">
+      <div className="flex-1">
+        {/**Categories */}
+        <div className="text-primary mb-6 lg:text-sm xl:text-md">
+          <Categories categoryInfo={category || []} />
+        </div>
 
-      <div className="text-2xl lg:text-xl xl:text-2xl mb-6 cursor-pointer uppercase">
-        <Link href={`/blogs/${path}`} passHref>
-          <h2>{title}</h2>
-        </Link>
+        <div className="text-2xl lg:text-xl xl:text-2xl mb-6 cursor-pointer uppercase line-clamp-3">
+          <Link href={`/blogs/${path}`} passHref>
+            <h2>{title}</h2>
+          </Link>
+        </div>
       </div>
 
       {/**Tom tat bai viet */}

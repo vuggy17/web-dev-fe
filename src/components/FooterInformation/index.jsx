@@ -27,13 +27,13 @@ function FooterInformation() {
           <h3 className={style.header}>THÔNG TIN LIÊN HỆ</h3>
           <ContactElement
             Icon={PhoneIcon}
-            contactInfor="Điện thoại: 0943.993.665"
+            contactInfor="Điện thoại: 0869.256.174"
           />
           <ContactElement
             Icon={MailIcon}
-            contactInfor="Email: drdphuong@gmail.com"
+            contactInfor="Email: lunistories@gmail.com"
           />
-          <ContactElement Icon={AtSymbolIcon} contactInfor="drdongphuong.com" />
+          <ContactElement Icon={AtSymbolIcon} contactInfor="lunistories.com" />
         </div>
 
         <div className="flex">
@@ -64,7 +64,7 @@ function FooterInformation() {
       </div>
 
       <div className="text-center flex flex-col items-center mb-10 md:text-left md:items-start mx-auto">
-        <h3 className={style.header}>DR ĐÔNG PHƯƠNG</h3>
+        <h3 className={style.header}>LUNI STORIES</h3>
         <div className="capitalize">
           <LinkElement title="Bài viết" link="/blogs" />
           <LinkElement title="Sản phẩm" link="/shop" />
@@ -77,15 +77,17 @@ function FooterInformation() {
         <LinkElement title="Nhà sáng lập Teoxane" link="#" /> */}
       </div>
 
-      <div className="text-center flex flex-col items-center mb-10 md:text-left md:items-start mx-auto">
-        <h3 className={style.header}>HỖ TRỢ KHÁCH HÀNG</h3>
-        <HoTroKhachHang />
-        {/* <LinkElement title="Hướng dẫn mua hàng" link="#" />
+      <div className="text-center flex flex-col items-center mb-10 md:text-left md:items-end ">
+        <div>
+          <h3 className={style.header}>HỖ TRỢ KHÁCH HÀNG</h3>
+          <HoTroKhachHang />
+          {/* <LinkElement title="Hướng dẫn mua hàng" link="#" />
         <LinkElement title="Phương thức thanh toán" link="#" />
         <LinkElement title="Phương thức vận chuyển" link="#" />
         <LinkElement title="Chính sách đổi trả" link="/information/chinh-sach-doi-tra" />
         <LinkElement title="Điều khoản dịch vụ" link="#" />
         <LinkElement title="Liên hệ" link="#" /> */}
+        </div>
       </div>
     </div>
   );

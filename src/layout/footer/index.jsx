@@ -4,6 +4,9 @@ import styles from "./styles.module.scss";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { useMobileFooter } from "@app/lib/GoogleAnalytics/eventAnalytics";
+import SubWidget from "@components/Blog/SubcribeWidget";
+
+
 export default function Footer({ setIsOpenSearch }) {
   const { cartItemsQuantity } = useSelector((state) => state.cart);
   return (
@@ -132,8 +135,14 @@ export default function Footer({ setIsOpenSearch }) {
           </li>
         </ul>
       </div>
-      <div style={{ textAlign: "center" }} className="bg-next-primary p-10">
+      <div
+        style={{ textAlign: "center", background: "url('https://cdn.shopify.com/s/files/1/0608/3054/8189/files/obh-f.png?v=1649987021')" }}
+        className="bg-next-primary  px-4 object-cover">
         <FooterInformation />
+
+        {/* news letter */}
+        <SubWidget />
+
       </div>
     </>
   );

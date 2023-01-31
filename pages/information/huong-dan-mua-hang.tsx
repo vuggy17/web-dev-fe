@@ -17,7 +17,7 @@ export default function HuongDanMuaHang({
         openGraph={{
           type: "website",
           url: `${BASE_URL_FE}/chinh-sach-doi-tra`,
-          title: "DR ĐÔNG PHƯƠNG | Hướng dẫn mua hàng",
+          title: "LUNI STORIES| Hướng dẫn mua hàng",
           description: "Hướng dẫn mua hàng",
           images: [
             {

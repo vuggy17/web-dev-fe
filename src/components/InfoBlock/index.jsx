@@ -6,11 +6,17 @@ import imageTest from "@public/images/template/post/post1-1024x653.jpg";
 // testing
 const itemCate = [
   {
+    id: 4,
+    title: "BST mới",
+    image: "/images/official/thumbnail/new-collection.jpg",
+    url: "./shop",
+  }, {
     id: 0,
     title: "Sản phẩm",
     image: "/images/official/others/san_pham.jpeg",
     url: "./shop",
   },
+
   {
     id: 1,
     title: "Dịch vụ",
@@ -34,12 +40,11 @@ InforItem.propTypes = {
 
 function InforBlock() {
   return (
-    <div className="w-full md:flex md:justify-around md:px-0 ">
+    <div className="w-full md:flex md:justify-around md:px-0 md:gap-4 ">
       {itemCate.map((item) => (
         <div
           key={item.id}
-          className={`mb-4 md:w-full md:mb-0
-        ${item.id !== itemCate.length - 1 ? "md:mr-14 lg:mr-16" : ""}`}
+          className="mb-4 md:w-full md:mb-0"
         >
           <InforItem
             url={item.url}

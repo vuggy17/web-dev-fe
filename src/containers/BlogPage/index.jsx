@@ -17,6 +17,7 @@ export default function BlogPageContainer({ blogpageData }) {
 
   return (
     <>
+      <div style={{borderBottom: "1px solid  rgb(233, 233, 233)", marginBottom: 35}}></div>
       <div>
         <div>
           <Brand />

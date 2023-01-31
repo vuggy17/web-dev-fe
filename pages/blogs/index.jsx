@@ -13,7 +13,7 @@ export default function Blogs({ blogpageData }) {
         openGraph={{
           type: "website",
           url: `${BASE_URL_FE}/blogs`,
-          title: "DR ĐÔNG PHƯƠNG | BÀI VIẾT",
+          title: "LUNI STORIES| BÀI VIẾT",
           description:
             "Cung cấp những kiến thức chuẩn và đầy đủ để khách hàng có thể hiểu hơn về kiến thức làm đẹp",
           images: [

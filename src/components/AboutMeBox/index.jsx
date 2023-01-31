@@ -25,9 +25,9 @@ function AboutmeBlock() {
             />
           </div>
         </div>
-        <div className="px-5 py-3">
+        {/* <div className="px-5 py-3">
           <CustomImage maxWidth="100px" src={BrandImage} />
-        </div>
+        </div> */}
         <div className="text-center break-words w-10/12 lg:w-full mb-6">
           <p>{aboutAuthor?.description}</p>
         </div>

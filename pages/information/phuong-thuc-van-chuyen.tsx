@@ -17,7 +17,7 @@ export default function ChinhSachDoiTra({
         openGraph={{
           type: "website",
           url: `${BASE_URL_FE}/phuong-thuc-van-chuyen`,
-          title: "DR ĐÔNG PHƯƠNG | Phương thức vận chuyển",
+          title: "LUNI STORIES| Phương thức vận chuyển",
           description: "Phương thức vận chuyển",
           images: [
             {

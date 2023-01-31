@@ -12,7 +12,7 @@ export default function Checkout() {
         openGraph={{
           type: "website",
           url: `${BASE_URL_FE}/checkout`,
-          title: "DR ĐÔNG PHƯƠNG | Hoàn tất đơn hàng",
+          title: "LUNI STORIES| Hoàn tất đơn hàng",
           description: "Hoàn tất đơn hàng",
           images: [
             {

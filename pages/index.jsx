@@ -19,12 +19,12 @@ function FullHomePage(props) {
   return (
     <div>
       <NextSeo
-        title="DR ĐÔNG PHƯƠNG"
+        title="LUNI STORIES"
         description="Bác sĩ tạo hình thẩm mỹ - khắc hoạ nét đẹp theo xu hướng cá nhân hoá"
         openGraph={{
           type: "website",
           url: `${BASE_URL_FE}`,
-          title: "DR ĐÔNG PHƯƠNG",
+          title: "LUNI STORIES",
           description:
             "Bác sĩ tạo hình thẩm mỹ - khắc hoạ nét đẹp theo xu hướng cá nhân hoá",
           images: [

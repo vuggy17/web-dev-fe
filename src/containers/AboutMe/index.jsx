@@ -17,9 +17,9 @@ export default function AboutmeContainer({ aboutmeData }) {
               <div className="flex-1">
                 <div dangerouslySetInnerHTML={{ __html: aboutmeData?.about }} />
               </div>
-              <div className="flex justify-center mt-10">
+              {/* <div className="flex justify-center mt-10">
                 <CustomImage maxWidth="300px" src={BrandImage} />
-              </div>
+              </div> */}
             </div>
           </div>
 

@@ -1,15 +1,15 @@
-import ProductCard from "@components/Shop/ProductCard";
 import React, { useState } from "react";
+import HPProductCard from "../../../components/Shop/HomePageProductCard";
 
 export default function Products({ productData }) {
   //   const [listProducts, setListProducts] = useState(productData);
   return (
     <>
-      <ul className="grid  xxs:grid-cols-2 gap-4  mx-auto sm:grid-cols-3 md:gap-6 w-full lg:gap-12">
+      <ul className="sm:grid sm:grid-cols-2 xxs:gap-4 mx-auto md:grid-cols-3 lg:grid-cols-4 block">
         {productData.map((item) =>
           item.is_publish ? (
             <li key={item.id}>
-              <ProductCard product={item} />
+              <HPProductCard product={item} />
             </li>
           ) : (
             ""

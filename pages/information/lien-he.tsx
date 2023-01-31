@@ -17,7 +17,7 @@ export default function LienHe({
         openGraph={{
           type: "website",
           url: `${BASE_URL_FE}/lien-he`,
-          title: "DR ĐÔNG PHƯƠNG | Liên hệ",
+          title: "LUNI STORIES| Liên hệ",
           description: "Liên hệ",
           images: [
             {

@@ -1,6 +1,7 @@
 import CustomImage from "@components/Common/CustomImage";
 import { convertDateTime } from "@utils/myUtils";
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import { imageLoader } from "src/app/services";
 
@@ -11,21 +12,19 @@ function PostImage({ media, time, path }) {
     <div className="relative cursor-pointer overflow-hidden w-full">
       <Link href={`/blogs/${path}`} passHref>
         <div className="transition duration-500 ease-in transform hover:scale-105 object-cover">
-          {/* <Image
-            alt={alt}
-            src={url ? `/upload/${url}` : `/qDmaPwS.jpg`}
-            layout="responsive"
-            // objectFit="contain"
-            loader={imageLoader}
-            // objectFit="cover"
-            width={1028}
-            height={720}
-          /> */}
-          <CustomImage
-            alt={alt}
-            loader={imageLoader}
-            src={url ? `${url}` : null}
-          />
+          <div className=" relative   border border-product-border w-full min-h-[192px] overflow-hidden aspect-w-square" style={{
+            aspectRatio: "1/1"
+          }}>
+            <Image
+              className='w-full h-full transition duration-300 ease-in transform hover:scale-110 '
+              alt={alt}
+              src={url || placeHolderImage}
+              loader={url ? imageLoader : undefined}
+              layout='fill'
+              objectFit='cover'
+            />
+          </div>
+
         </div>
       </Link>
       <div className="absolute bg-gray-100 bg-opacity-80 top-10 text-xs p-2">

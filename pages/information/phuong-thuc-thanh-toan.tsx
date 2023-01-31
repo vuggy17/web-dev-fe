@@ -17,7 +17,7 @@ export default function PhuongThucThanhToan({
         openGraph={{
           type: "website",
           url: `${BASE_URL_FE}/phuong-thuc-thanh-toan`,
-          title: "DR ĐÔNG PHƯƠNG | Phương thức thanh toán",
+          title: "LUNI STORIES| Phương thức thanh toán",
           description: "Phương thức thanh toán",
           images: [
             {

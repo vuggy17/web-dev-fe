@@ -37,6 +37,8 @@ function ShopByCategory({ shopByCategoryPageData }) {
         }}
       />
       <div>
+      <div style={{ borderBottom: "1px solid  rgb(233, 233, 233)", marginBottom: 35 }}></div>
+
         <ShopContainer shopPageData={shopByCategoryPageData} />
       </div>
     </>

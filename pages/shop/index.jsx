@@ -13,7 +13,7 @@ export default function Shop({ shopPageData }) {
         openGraph={{
           type: "website",
           url: `${BASE_URL_FE}/shop`,
-          title: "DR ĐÔNG PHƯƠNG | SHOP",
+          title: "LUNI STORIES| SHOP",
           description: "Nơi cung cấp các sản phẩm chính hãng giá tốt nhất ",
           images: [
             {
@@ -23,6 +23,8 @@ export default function Shop({ shopPageData }) {
           ],
         }}
       />
+      <div style={{ borderBottom: "1px solid  rgb(233, 233, 233)", marginBottom: 35 }}></div>
+
       <ShopContainer shopPageData={shopPageData} />
     </div>
   );

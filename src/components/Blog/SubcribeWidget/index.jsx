@@ -27,7 +27,10 @@ function SubWidget() {
     }
   }
   return (
-    <div className="w-full md:flex md:flex-col">
+    <div className="w-full flex flex-col pb-10">
+      <h2 className="text-4xl text-center text-gray-400 font-handwriting">Đăng ký ngay</h2>
+      <p className="pt-1 text-sm text-gray-400 text-center ">Nhận bài viết mới nhất qua email</p>
+
       <div className="mb-5">
         <AlertCommponent {...alert} />
       </div>
@@ -40,32 +43,26 @@ function SubWidget() {
         }}
       >
         <div
-          className="bg-secondary text-gray-600 px-6 py-6 
-        md:w-full
-        lg:flex lg:m-0 lg:justify-around lg:items-center"
+          className="mx-auto md:w-[40%] flex flex-col items-center "
+        //   className="bg-secondary text-gray-600 px-6 py-6 
+        // md:w-full
+        // lg:flex lg:m-0 lg:justify-around lg:items-center"
         >
-          <div className="pb-5 lg:w-1/5 lg:pb-0">
-            <h2 className="text-2xl">Đăng ký ngay</h2>
-            <p className="pt-1 text-sm">Nhận bài viết mới nhất qua email</p>
-          </div>
-          <div className="pb-4 lg:w-1/5 lg:pb-0">
-            <input
-              ref={nameRef}
-              type="text"
-              name="name"
-              placeholder="Tên của bạn"
-              className="w-full h-11 px-2 outline-none"
-            />
-          </div>
-          <div className="pb-4 lg:w-1/5 lg:pb-0">
-            <input
-              ref={emailRef}
-              type="email"
-              name="email"
-              placeholder="Email"
-              className="w-full h-11 px-2 outline-none"
-            />
-          </div>
+
+          <input
+            ref={nameRef}
+            type="text"
+            name="name"
+            placeholder="Tên của bạn"
+            className="w-full h-11 px-2 outline-none border-[1px] border-gray-300 text-center mb-2"
+          />
+          <input
+            ref={emailRef}
+            type="email"
+            name="email"
+            placeholder="Email"
+            className="w-full h-11 px-2 border-[1px] border-gray-300 text-center  mb-2"
+          />
           <div className="pb-4 lg:w-1/5 lg:pb-0">
             <input
               type="submit"

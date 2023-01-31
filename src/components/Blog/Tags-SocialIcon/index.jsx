@@ -34,9 +34,9 @@ import SocialIcon from "./SocialIcon";
 function PostTagsAndShare({ tags }) {
   return (
     <div className=" flex flex-col md:items-center text-xs text-gray-600">
-      <div className="w-60 mb-12 mx-auto">
+      {/* <div className="w-60 mb-12 mx-auto">
         <CustomImage src={BrandImage} />
-      </div>
+      </div> */}
       <div className="md:flex justify-between w-full items-center">
         <div className="flex flex-wrap items-center md:pb-0 pb-6">
           <TagIcon className="w-3.5 h-3.5 mr-2" />
