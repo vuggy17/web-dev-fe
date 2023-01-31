@@ -1,5 +1,9 @@
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./src/**/*.{js,ts,jsx,tsx}"],
+  purge: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+  ],
   darkMode: false, // or 'media' or 'class'
   mode: "jit",
   theme: {
@@ -24,6 +28,9 @@ module.exports = {
       8: "8px",
     },
     extend: {
+      spacing: {
+        fit: "fit-content",
+      },
       colors: {
         "next-primary": "var(--next-primary-color)",
         "next-secondary": "var(--next-secondary-color)",
@@ -67,11 +74,12 @@ module.exports = {
       gridTemplateColumns: {
         // Simple 16 column grid
         "5col-280": "repeat(5, minmax(120px, 280px))",
+        "2col-category": "1fr 30%",
       },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 };
