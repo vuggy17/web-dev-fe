@@ -43,7 +43,7 @@ export default function ItemsTable({ cartItems }) {
               </div>
               <div className="pl-2 py-2">
                 <Link passHref href="/shop">
-                  <div className="cursor-pointer bg-primary inline-block text-sm py-2 px-4 text-gray-50 uppercase hover:bg-gray-800 transition duration-500 ease-linear">
+                  <div className="cursor-pointer border border-product-border text-textPrimary inline-block text-sm py-2 px-4 hover:text-gray-50 uppercase hover:bg-gray-800 transition duration-500 ease-linear">
                     Tiếp tục mua hàng
                   </div>
                 </Link>

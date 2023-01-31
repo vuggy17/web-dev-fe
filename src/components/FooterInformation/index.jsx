@@ -77,15 +77,17 @@ function FooterInformation() {
         <LinkElement title="Nhà sáng lập Teoxane" link="#" /> */}
       </div>
 
-      <div className="text-center flex flex-col items-center mb-10 md:text-left md:items-start mx-auto">
-        <h3 className={style.header}>HỖ TRỢ KHÁCH HÀNG</h3>
-        <HoTroKhachHang />
-        {/* <LinkElement title="Hướng dẫn mua hàng" link="#" />
+      <div className="text-center flex flex-col items-center mb-10 md:text-left md:items-end ">
+        <div>
+          <h3 className={style.header}>HỖ TRỢ KHÁCH HÀNG</h3>
+          <HoTroKhachHang />
+          {/* <LinkElement title="Hướng dẫn mua hàng" link="#" />
         <LinkElement title="Phương thức thanh toán" link="#" />
         <LinkElement title="Phương thức vận chuyển" link="#" />
         <LinkElement title="Chính sách đổi trả" link="/information/chinh-sach-doi-tra" />
         <LinkElement title="Điều khoản dịch vụ" link="#" />
         <LinkElement title="Liên hệ" link="#" /> */}
+        </div>
       </div>
     </div>
   );

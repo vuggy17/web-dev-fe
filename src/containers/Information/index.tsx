@@ -11,7 +11,7 @@ interface Props {
 
 export default function InformationContainer({ post }: Props): ReactElement {
   return (
-    <div>
+    <div className="pb-20">
       <div>
         <div
           style={{ borderBottom: "1px solid #e9e9e9", marginBottom: "35px" }}
@@ -30,14 +30,16 @@ export default function InformationContainer({ post }: Props): ReactElement {
                 </div>
               </div>
             </div>
-
-            <div className="mb-10 lg:mb-14">
-              {/** Infor block va newsletter */}
-              <SubWidget />
-            </div>
           </div>
         </div>
       </div>
     </div>
   );
+}
+
+{
+  /* <div className="mb-10 lg:mb-14">
+Infor block va newsletter
+<SubWidget />
+</div> */
 }

@@ -35,6 +35,9 @@ $navbar-height: 55px;
   &__headerLeft {
     height: 100%;
     background-color: inherit;
+    :hover{
+      cursor: pointer;
+    }
     img {
       width: auto !important;
       height: $navbar-height !important;
@@ -243,7 +246,7 @@ $navbar-height: 55px;
       font-size: 20px;
       display: flex;
       align-items: center;
-      padding-left: 30px;
+      padding-left: 16px;
       cursor: pointer;
     }
     &__headerCenter {
@@ -362,7 +365,5 @@ $navbar-height: 55px;
     }
 
     //----
-  }
-  @media (max-width: $tablet) {
   }
 }

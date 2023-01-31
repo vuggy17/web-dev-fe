@@ -18,7 +18,9 @@ export default function Navbar({ appRoute, onOpenSearch }) {
   return (
     <>
       <div className={styles.responsiveLogo}>
-        <img src="./images/official/logo/logo-white.png" />
+        <Link href={"/"} passHref>
+          <img src="./images/official/logo/logo-white.png" />
+        </Link>
       </div>
       <div className={styles.wrapper}>
         <div
@@ -34,7 +36,9 @@ export default function Navbar({ appRoute, onOpenSearch }) {
           <i className="bx bx-menu"></i>
         </div>
         <div className={styles.wrapper__headerLeft}>
-          <img src="./images/official/logo/logo-white.png" />
+          <Link href={"/"} passHref>
+            <img src="./images/official/logo/logo-white.png" />
+          </Link>
         </div>
         <div className={`${styles.wrapper__headerCenter}`}>
           <ul

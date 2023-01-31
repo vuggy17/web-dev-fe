@@ -4,6 +4,11 @@ import Image from 'next/image';
 import { imageLoader } from "src/app/services";
 import placeHolderImage from "@public/images/official/others/cannot-load.png";
 
+/**
+ * better version of product card, fix image size
+ * @param {*} data of product 
+ * @returns 
+ */
 export default function HPProductCard({ product }) {
     const {
         price,
@@ -50,9 +55,11 @@ export default function HPProductCard({ product }) {
         <Link passHref href={`/product/${path}`}>
             <div className="flex flex-col items-center cursor-pointer mb-4 md:mb-2 truncate">
                 <div className="relative w-full mb-3 overflow-hidden">
-                    <div className="transition relative duration-300 ease-in transform hover:scale-110 w-full h-[192px] overflow-hidden">
+                    <div className=" relative   border border-product-border w-full min-h-[192px] overflow-hidden aspect-w-square" style={{
+                        aspectRatio: "1/1"
+                    }}>
                         <Image
-                            className='w-full h-full '
+                            className='w-full h-full transition duration-300 ease-in transform hover:scale-110 '
                             alt={name}
                             src={thumbnail || placeHolderImage}
                             loader={thumbnail ? imageLoader : undefined}

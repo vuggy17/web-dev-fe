@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   mode: "jit",
   theme: {
+    aspectRatio: {
+      square: "1 / 1",
+    },
     screens: {
       xxs: "300px",
       xs: "375px",
@@ -40,6 +43,7 @@ module.exports = {
         alertSuccess: "var(--alert-success)",
         alertError: "var(--alert-error)",
         alertInfo: "var(--alert-info)",
+        "product-border": "rgba(0,0,0,.125)",
       },
       transitionProperty: {
         height: "height",
@@ -73,5 +77,8 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
 };

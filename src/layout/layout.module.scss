@@ -8,7 +8,6 @@ $navbar-height: 55px;
   background-color: var(--next-bg-color);
   // padding-left: 16px;
   // padding-right: 16px;
-
 }
 
 .navbar {
@@ -23,11 +22,14 @@ $navbar-height: 55px;
 }
 .footer {
   min-height: 55px;
+  background-image: url("https://cdn.shopify.com/s/files/1/0608/3054/8189/files/obh-f.png?v=1649987021");
+  background-color: #f8f0e9;
+  padding-top: 48px;
 }
 
 // @media (min-width: $large-desktop) {
 //   .container{
-//    padding-left: 64px; 
+//    padding-left: 64px;
 //    padding-right: 64px;
 //   }
 //  }
