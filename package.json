@@ -22,6 +22,8 @@
     "editorjs-parser": "^1.5.3",
     "embla-carousel-autoplay": "^7.0.9",
     "embla-carousel-react": "^7.0.9",
+    "flowbite": "^1.6.3",
+    "flowbite-react": "^0.3.8",
     "framer-motion": "^4.1.17",
     "keen-slider": "^5.5.1",
     "moment": "^2.29.1",

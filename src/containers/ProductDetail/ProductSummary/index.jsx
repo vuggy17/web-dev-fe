@@ -240,7 +240,6 @@ function ProductSumary({ productData, setCartAlert }) {
       </div>
 
       <div className="text-sm mb-6">
-        <div className="mb-2">SKU: {SKU}</div>
         <div className="mb-2">
           Danh mục sản phẩm:{" "}
           {/* {(category || []).map((e, index, array) => (
