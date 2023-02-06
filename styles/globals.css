@@ -92,4 +92,9 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+/* react range slider */
+.range-slider input[type="range"]{
+  display: none;
+}
 /*arrow input end here*/

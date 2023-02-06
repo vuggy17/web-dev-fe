@@ -2,13 +2,14 @@ import Banner from "@components/Banner";
 import Brand from "@components/Brand";
 import ProductCard from "@components/Shop/ProductCard";
 import CategoryBar from "./ShopCategoryBar";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 import Products from "./Products";
 import MultiRangeSlider from "../../components/Slider/MultiRangeSlider";
 import { Dropdown } from "flowbite-react";
 import Image from "next/image";
 import placeHolderImage from "@public/images/official/others/san_pham.jpeg";
+import { useRouter } from "next/router";
 
 const testData = [
   {
@@ -37,26 +38,53 @@ const testData = [
   },
 ];
 
-// 10 japanese city names
-const cityNames = [
-  "Tokyo",
-  "Osaka",
-  "Kyoto",
-  "Fukuoka",
-  "Kobe",
-  "Nagoya",
-  "Sapporo",
-  "Kawasaki",
-  "Saitama",
-  "Chiba",
-];
+const query = (name, value) => {
+  return `&${name}=${value}`;
+};
 
 function ShopContainer({ shopPageData }) {
-  const [priceVisible, setPriceVisible] = useState(false);
   const [categoryVisible, setCategoryVisible] = useState(false);
+  const [sortOn, setSortOn] = useState(false);
   const { mainSlide, listProducts, currentCategory } = shopPageData;
+  const [price, setPrice] = useState([0, 100]);
+  const router = useRouter();
+  const shopCategories = useSelector((state) => state.common.shopCategories);
+  const [sortValue, setSortValue] = useState("name|ASC"); //name|<direction> or price|<direction>
+
+  const redirectPage = useCallback((path) => {
+    router.push(
+      {
+        pathname: `/shop/${path}`,
+        query: { ...router.query },
+      },
+      undefined,
+      { scroll: false }
+    );
+  }, []);
+
+  console.log(router.pathname);
+
+  const handleSort = useCallback((value) => {
+    // construct query
+    let queryString = "";
+    queryString += query(sortValue.split("|")[0], sortValue.split("|")[1]);
+    queryString += query("priceStart", price[0] * 1000);
+    queryString += query("priceEnd", price[1] * 1000);
+    queryString += query("page", 1);
+
+    //routing api here
+    router.push(
+      {
+        pathname: router.pathname,
+        query: queryString,
+      },
+      null,
+      { scroll: false }
+    );
+  }, []);
+
   return (
-    <div className="mb-14">
+    <div className="mb-14  px-4 3xl:px-16">
       <div>
         <Brand />
       </div>
@@ -66,130 +94,130 @@ function ShopContainer({ shopPageData }) {
       >
         <Banner listBanners={mainSlide?.banners} />
       </div>
-      {/* <div className="px-2" style={{ margin: "auto", maxWidth: "1200px" }}>
-        <div className="w-full flex gap-3 mb-9">
-          <CategoryBar currentCategory={currentCategory} />
-        </div>
-
-        <div className="relative w-fit">
-          <div
-            onClick={() => {
-              setPriceVisible(!priceVisible);
-            }}
-            className="cursor-pointer py-3 pl-5 pr-5 flex justify-between items-center"
-          >
-            Price
-            <i
-              style={priceVisible ? { transform: "rotate(90deg)" } : {}}
-              className={`bx bx-chevron-right transition-all duration-100 `}
-            />
-          </div>
-          <div
-            style={
-              priceVisible
-                ? { opacity: 1, transform: "translateY(0px)" }
-                : {
-                    opacity: 0,
-                    transform: "translateY(-50px)",
-                    pointerEvents: "none",
-                  }
-            }
-            className={`absolute z-10 top-full sm:w-96 w-full  shadow-lg left-0 duration-100  transition-all`}
-          >
-            <MultiRangeSlider
-              min={0}
-              max={1000}
-              onChange={({ min, max }) =>
-                console.log(`min = ${min}, max = ${max}`)
-              }
-            />
-          </div>
-        </div>
-      </div> */}
 
       {/* filter and category */}
-      <div className="mb-8 ">
-        <div>
-          <div className="flex justify-between w-full text-sm mb-2">
-            <div className="flex gap-4">
-              <span
-                className="align-baseline cursor-pointer hover:text-black"
-                onClick={() => setCategoryVisible((visible) => !visible)}
+      <div className="mb-8  text-textPrimary">
+        {/* labels */}
+        <div className="flex justify-between items-center w-full text-sm mb-2">
+          <div className="flex gap-4">
+            <span
+              className="align-baseline cursor-pointer hover:text-black"
+              onClick={() => setCategoryVisible((visible) => !visible)}
+            >
+              <span className="mr-1"> Loại sản phẩm</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1}
+                stroke="currentColor"
+                className="w-4 h-4 inline duration-200"
+                style={{
+                  transform: categoryVisible ? "" : "rotate(180deg)",
+                }}
               >
-                <span className="mr-1"> Loại sản phẩm</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1}
-                  stroke="currentColor"
-                  className="w-4 h-4 inline duration-200"
-                  style={{
-                    transform: categoryVisible ? "rotate(180deg)" : "",
-                  }}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                  />
-                </svg>
-              </span>
-              <span onClick={() => setPriceVisible((visible) => !visible)}>
-                Giá
-              </span>
-            </div>
-            <div>
-              <span>
-                {/* icon */}
-                <span className=" align-baseline">
-                  <span className="mr-2">Sắp xếp</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6 inline"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
-                    />
-                  </svg>
-                </span>
-              </span>
-            </div>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </span>
+          </div>
+          <div>
+            {/* sort */}
+            <span
+              className="flex items-center cursor-pointer "
+              onClick={() => setSortOn((on) => !on)}
+            >
+              <span className="mr-1">Sắp xếp</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-4 h-4 inline"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
+                />
+              </svg>
+            </span>
           </div>
         </div>
 
+        {/* filter's display zone */}
         <div
-          className="duration-300 transition-all overflow-hidden bg-gray-100"
+          className="duration-300 transition-all overflow-hidden bg-gray-50 "
           style={{
-            height: categoryVisible ? "auto" : 0,
+            height: categoryVisible || sortOn ? "auto" : 0,
           }}
         >
-          <div className="flex h-full">
-            <div className="flex-1 grid grid-cols-5 grid-rows-none">
-              {cityNames.map((cityName) => (
-                <div className=" px-2 flex items-center justify-center w-full duration-200 cursor-pointer hover:bg-gray-100 py-2">
-                  <p className="text-center">{cityName}</p>
+          {categoryVisible && (
+            <div className="flex h-full px-4 pt-8">
+              <div className="flex-1 md:grid md:grid-cols-5 md:grid-rows-2 md:gap-1 md:mr-2 ">
+                <div
+                  className="mb-2 md:mb-0 px-2 flex items-center justify-center w-full duration-200 cursor-pointer hover:bg-[#f0e1d3] py-2 border-[0.5px] rounded border-solid border-[#7f4b19] border-opacity-70"
+                  style={{
+                    backgroundColor: currentCategory ?? "#f0e1d3",
+                  }}
+                  onClick={() => {
+                    redirectPage("");
+                  }}
+                >
+                  <p className="text-center">Tất cả</p>
                 </div>
-              ))}
-            </div>
-            <div className="w-[30%] overflow-hidden p-4">
-              <div className="relative h-[200px]  ">
-                <Image
-                  className="w-full h-full "
-                  alt={"category img"}
-                  src={placeHolderImage}
-                  layout="fill"
-                  objectFit="cover"
-                />
+                {shopCategories.map((category) => (
+                  <div
+                    className="mb-2 md:mb-0 px-2 flex items-center justify-center w-full duration-200 cursor-pointer hover:bg-[#f0e1d3] py-2 border-[0.5px] rounded border-solid border-[#7f4b19] border-opacity-70"
+                    style={{
+                      backgroundColor:
+                        currentCategory?.id === category.id ? "#f0e1d3" : "",
+                    }}
+                    onClick={() => {
+                      redirectPage(category.path);
+                    }}
+                  >
+                    <p className="text-center">{category.name}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="w-[30%] overflow-hidden hidden md:block">
+                <div className="relative h-[200px]  ">
+                  <Image
+                    className="w-full h-full "
+                    alt={"category img"}
+                    src={placeHolderImage}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
               </div>
             </div>
-          </div>
+          )}
+
+          {sortOn && (
+            <div className="px-4 pt-8 pb-2">
+              <MultiRangeSlider
+                value={price}
+                min={0}
+                max={1000}
+                onChange={(min, max) => setPrice(...[min, max])}
+                onSortChange={(value) => setSortValue(value)}
+              />
+              <div className="flex justify-end border-t pt-2 ">
+                <button
+                  className="cursor-pointer px-6 py-2 bg-next-btn text-sm font-medium text-center hover:bg-gray-800 transition text-gray-100  duration-500 w-fit"
+                  onClick={() => handleSort()}
+                >
+                  Áp dụng
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
       {listProducts.length > 0 ? (

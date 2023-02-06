@@ -66,10 +66,10 @@ export default function BlogDetailContainer({ blogDetailPageData }) {
             </div>
           </div>
 
-          <div className="mb-10 lg:mb-14">
-            {/** Infor block va newsletter */}
+          {/** Infor block va newsletter */}
+          {/* <div className="mb-10 lg:mb-14">
             <SubWidget />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

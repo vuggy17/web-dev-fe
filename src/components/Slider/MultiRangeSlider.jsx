@@ -1,86 +1,76 @@
 import React, { useCallback, useEffect, useState, useRef } from "react";
-import classnames from "classnames";
+// import classnames from "classnames";
 import PropTypes from "prop-types";
-import styles from "./rangeSlider.module.scss";
+// import styles from "./rangeSlider.module.scss";
+import RangeSlider from "react-range-slider-input";
+import "react-range-slider-input/dist/style.css";
 
-const MultiRangeSlider = ({ min, max, onChange }) => {
-  const [minVal, setMinVal] = useState(min);
-  const [maxVal, setMaxVal] = useState(max);
-  const minValRef = useRef(null);
-  const maxValRef = useRef(null);
-  const range = useRef(null);
+const sortOptions = [
+  {
+    id: "name|ASC",
+    label: "A-Z",
+    checked: true,
+  },
+  {
+    id: "name|DESC",
+    label: "Z-A",
+  },
+  {
+    id: "price|DESC",
+    label: "Giá từ cao đến thấp",
+  },
+  {
+    id: "price|ASC",
+    label: "Giá từ thấp đến cao",
+  },
+];
 
-  // Convert to percentage
-  const getPercent = useCallback(
-    (value) => Math.round(((value - min) / (max - min)) * 100),
-    [min, max]
-  );
-
-  // Set width of the range to decrease from the left side
-  useEffect(() => {
-    if (maxValRef.current) {
-      const minPercent = getPercent(minVal);
-      const maxPercent = getPercent(+maxValRef.current.value); // Preceding with '+' converts the value from type string to type number
-
-      if (range.current) {
-        range.current.style.left = `${minPercent}%`;
-        range.current.style.width = `${maxPercent - minPercent}%`;
-      }
-    }
-  }, [minVal, getPercent]);
-
-  // Set width of the range to decrease from the right side
-  useEffect(() => {
-    if (minValRef.current) {
-      const minPercent = getPercent(+minValRef.current.value);
-      const maxPercent = getPercent(maxVal);
-
-      if (range.current) {
-        range.current.style.width = `${maxPercent - minPercent}%`;
-      }
-    }
-  }, [maxVal, getPercent]);
-
-  // Get min and max values when their state changes
-  useEffect(() => {
-    onChange({ min: minVal, max: maxVal });
-  }, [minVal, maxVal, onChange]);
-
+const MultiRangeSlider = ({ onChange, value, onSortChange }) => {
   return (
-    <div className={styles.container}>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        value={minVal}
-        ref={minValRef}
-        onChange={(event) => {
-          const value = Math.min(+event.target.value, maxVal - 1);
-          setMinVal(value);
-          event.target.value = value.toString();
-        }}
-        className={styles.thumb}
-        style={{ zIndex: minVal > max - 100 ? 5 : 3 }}
-      />
-      <input
-        type="range"
-        min={min}
-        max={max}
-        value={maxVal}
-        ref={maxValRef}
-        onChange={(event) => {
-          const value = Math.max(+event.target.value, minVal + 1);
-          setMaxVal(value);
-          event.target.value = value.toString();
-        }}
-        className={`${styles.thumb} ${styles.thumb__zindex_4}`}
-      />
-
-      <div className={styles.slider}>
-        <div className={styles.slider__track} />
-        <div ref={range} className={styles.slider__range} />
-        <div className={styles.slider__left_value}>{minVal}</div>
-        <div className={styles.slider__right_value}>{maxVal}</div>
+    <div className="pb-4">
+      <div className="flex justify-between text-textPrimary">
+        <div>
+          <span className="capitalize mb-2"> sắp xếp</span>
+          <div className="text-sm">
+            {sortOptions.map((option) => (
+              <div
+                className="flex gap-2 items-center mb-1"
+                onClick={() => onSortChange(option.id)}
+              >
+                <input
+                  type="radio"
+                  name="sort-by"
+                  id={option.id}
+                  defaultChecked={option.checked}
+                />
+                <label htmlFor={option.id}> {option.label}</label>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="lg:w-[500px]">
+          <div className=" text-gray-500 flex flex-col gap-4">
+            <div className=" flex justify-between ">
+              <span className="capitalize text-textPrimary"> mức giá :</span>
+              <div>
+                Từ
+                <span className="text-textPrimary px-1">
+                  {(value[0] * 1000).toLocaleString()}
+                </span>
+                đến
+                <span className="text-textPrimary px-1">
+                  {(value[1] * 1000).toLocaleString()}
+                </span>
+              </div>
+            </div>
+            <RangeSlider
+              step={10}
+              value={value}
+              max={1000}
+              onInput={onChange}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
